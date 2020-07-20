@@ -1,0 +1,7 @@
+{
+  "name": "ncbEventMgmt",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

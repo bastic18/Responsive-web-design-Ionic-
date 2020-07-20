@@ -1,0 +1,104 @@
+
+<ion-content>
+
+  
+  <h1>Create New Event</h1>
+ 
+  <div class="instructions">
+    Create a new event by entering the necessary information related to your event. 
+  </div>
+  
+ 
+  <form class="form">
+
+    <ion-item lines="none">
+      <ion-label position="stacked">NAME</ion-label>
+      <ion-input  [(ngModel)]="name" name="name" [ngModelOptions]="{standalone: true}" ></ion-input>
+    </ion-item>
+  
+    <ion-item lines="none">
+      <ion-label position="stacked">TITLE</ion-label>
+      <ion-input name="title" [(ngModel)]="title"[ngModelOptions]="{standalone: true}" ></ion-input>
+    </ion-item>
+  
+    <ion-item lines="none">
+      <ion-label position="stacked">CATEGORY</ion-label>
+      <ion-input name="category" [(ngModel)]="category" [ngModelOptions]="{standalone: true}"></ion-input>
+    </ion-item>
+  
+    <ion-item lines="none">
+      <ion-label position="stacked">COST</ion-label>
+      <ion-input name="cost" [(ngModel)]="cost" [ngModelOptions]="{standalone: true}"></ion-input>
+    </ion-item>
+    
+        <ion-item lines="none">
+          <ion-label position="stacked">DESCRIPTION</ion-label>
+          <ion-textarea name="description" [(ngModel)]="description" [ngModelOptions]="{standalone: true}" ></ion-textarea>
+        </ion-item>
+
+    
+        <ion-item lines="none">
+          <ion-label position="stacked">Venue</ion-label>
+          <ion-input  name="venue" [(ngModel)]="venue" [ngModelOptions]="{standalone: true}"></ion-input>
+        </ion-item>
+
+
+
+  
+    <ion-grid>
+      <ion-row>
+        
+        <ion-col>
+          <ion-item>
+            <ion-label position="stacked">START DATE <ion-icon name="caret-down-outline"></ion-icon> </ion-label>
+            <ion-datetime displayFormat="MM/DD/YYYY/HH:MM"   [(ngModel)]="date1" [ngModelOptions]="{standalone: true}" name="date1"></ion-datetime>
+          </ion-item>
+        </ion-col>
+
+
+        <ion-col> 
+          <ion-item>
+            <ion-label position="stacked">END DATE  <ion-icon name="caret-down-outline"></ion-icon> </ion-label>
+            <ion-datetime displayFormat="MM/DD/YYYY/HH:mm" min="2020-01-01" max="2040-12-31"  name="date2" [(ngModel)]="date2" [ngModelOptions]="{standalone: true}"></ion-datetime>
+          </ion-item>
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+
+     
+  
+  
+    <div class ="uploadbtn">
+    <input
+  style="display: none"
+  type="file" (change)="loadImageFromDevice($event)" #fileInput>
+      <ion-button  class="ion-margin" (click)="fileInput.click()"> 
+        <ion-icon name="cloud-upload-outline" slot="start"></ion-icon>
+        Upload Flyer
+      </ion-button>
+    </div>
+   
+  
+  
+  
+    <ion-grid class="ion-margin">
+      <ion-row>
+  
+        <ion-col>
+          <ion-button routerLink="/" expand="block"  color="medium">Back</ion-button>
+        </ion-col>
+  
+        <ion-col>
+          <ion-button type="submit" (click)="add_event()" expand="block" color="light">Save</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+
+
+ 
+
+  
+
+</ion-content>

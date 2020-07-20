@@ -1,0 +1,110 @@
+.line-height2{
+    line-height: 2rem;
+}
+
+
+.details{
+    position: absolute;
+    top: 1rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    color: #424242;
+
+    .event-header{
+        color: #575757;
+        font-size: 24px; 
+        font-weight: bold;
+        margin-bottom: 0;     
+    }
+    
+    ion-card-subtitle{
+        color: #ff7587;
+        font-size: 16px;
+
+        ion-icon{
+            color: #ff7587;
+            font-size: 16px;
+        }
+    }
+
+    .small-details{
+        color: #424242;
+        margin-bottom: 0px;
+        line-height: 24px;
+        font-size: 14px;
+        letter-spacing: 2px;
+    }
+
+    .description{
+        color: #424242;
+        margin-bottom: 0px;
+        line-height: 30px;
+        font-size: 16px;
+        letter-spacing: 1px;
+    }
+
+    .action-button{
+        // display: flex;
+        margin-bottom: 20px;
+      
+      
+        ion-button{
+            text-transform: capitalize;
+            font-weight: 300;
+            --background: #f05f72;
+            --border-radius: 7px;
+            --box-shadow: none;
+            // --padding-top: 2rem;
+            height: 44px;
+            left: 4.5rem;
+            top: 12rem;
+            margin-right: 1rem;
+            margin-top: 1rem;
+          
+        }
+      
+        ion-icon{
+            margin-right: 5px;
+        }
+      }
+      
+}
+
+.img-header{
+    text-align: center;
+    .detailed-img{
+        width: 100%;
+        border-radius: 6px;
+        
+    }
+
+}
+
+.menu-header-bg{
+    height: 220px;
+    width: 350px;
+    background: #fc5d85;
+    background: linear-gradient(90deg, #fdffff 0%, #e9f0f1 100%);
+    box-shadow: 0px 1px 10px rgba(98, 140, 255, 0.5);
+    transform: rotate(-15deg);
+    border-radius: 10px 10px 10px 50px;
+    margin-left: -18px;
+    margin-top: -6rem;
+    margin-bottom: 60px;
+}
+
+
+
+
+@media only screen and (max-width: 600px) { 
+    .img-header{
+        text-align: center;
+        .detailed-img{
+            width: 100%;
+            height: 150px;
+            border-radius: 6px;
+            
+        }
+    
+    }
+}

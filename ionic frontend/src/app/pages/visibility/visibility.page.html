@@ -1,0 +1,95 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>  
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="head-banner"></div>
+    <img src="assets/undraw_screen_time_vkev.svg" class = "banner-img"/>
+
+    <ion-row>
+      <ion-col class="ion-margin-start ion-margin-top">
+       <h3 class="ion-no-margin big-message">
+          System Private Events
+       </h3>   
+
+       
+      
+      </ion-col>
+    </ion-row>
+
+
+    <ion-grid class="user-table">
+      <ion-row class="table-headers">
+
+        <ion-col>
+         Name
+        </ion-col>
+
+        <ion-col class="hideable-md">
+          Category
+        </ion-col>
+
+
+        <ion-col class="hideable-md">
+          Date
+        </ion-col>
+
+
+        <ion-col>
+          Change Status
+        </ion-col>
+
+        <!-- <ion-col>
+          Remove
+        </ion-col> -->
+      </ion-row>
+
+      <ion-row *ngFor="let e of (events_list_not_visble | async)">
+
+        <ion-col>
+          {{e.name}}
+        </ion-col>
+
+        <ion-col class="hideable-md">
+          {{e.category}}
+        </ion-col>
+
+
+        <ion-col class="hideable-md">
+          {{e.start_dt}}
+        </ion-col>
+
+
+        <ion-col>
+          <div class="action-button">
+          
+            <ion-button routerLink="/home"> 
+              <ion-icon slot="start" name="eye"></ion-icon> <p class="hideable-sm" (click)="visibility(e.id)">Public </p>
+            </ion-button>
+        
+        </div>
+        </ion-col>
+
+        <!-- <ion-col>
+          <div class="action-button">
+          
+            <ion-button routerLink="/createvent"> 
+              <ion-icon slot="start" name="trash"></ion-icon> <p class="hideable-sm">Remove</p>
+            </ion-button>
+        
+        </div>
+        </ion-col> -->
+            
+        
+      </ion-row>
+    </ion-grid>
+
+        
+
+  
+</ion-content>

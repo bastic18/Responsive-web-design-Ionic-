@@ -1,0 +1,142 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-searchbar type="tel"></ion-searchbar>
+  
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div color="primary">
+    <div class="head-banner"></div>
+    <img src="assets/undraw_having_fun_iais.svg" class = "banner-img"/>
+
+
+
+    <ion-grid  *ngFor= "let user of (user_list | async);">
+      <ion-row   >
+        <ion-col class="ion-margin-start ion-margin-top">
+         <h3 class="ion-no-margin big-message">
+            Welcome, {{user.firstname}}  
+         </h3>   
+         <p>
+          Check out what new events have been added!
+         </p>
+         
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="action-button">
+          
+          <ion-button *ngIf="user.admin==0" routerLink="/myevents"  > 
+            <ion-icon slot="start" name="calendar"></ion-icon> Your Events 
+          </ion-button>
+          <ion-button *ngIf="user.admin==1" routerLink="/users"  > 
+            <ion-icon slot="start" name="calendar"></ion-icon> Users 
+          </ion-button>
+      
+      </ion-row>
+  <ion-fab vertical="top" horizontal="end"  >
+    <ion-fab-button color="danger"  [routerLink]="['/visibility']" *ngIf="user.admin==1">
+      <ion-icon name="eye"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+    </ion-grid>
+
+
+    <ion-grid>
+      <ion-row>
+        <ion-col class="ion-margin-start ion-margin-top">
+         <h3 class="ion-no-margin event-header">
+           To New Experiences!
+         </h3>      
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-slides [options]="sliderConfig">
+      <ion-slide class="slide-width">
+        <ion-card>
+          <img src="assets/alasdair-elmes-ULHxWq8reao-unsplash.jpg" height = "100" class = "size-img"/>
+        </ion-card>
+      </ion-slide>
+  
+      <ion-slide>
+        <ion-card>
+          <img src="assets/samantha-gades-fIHozNWfcvs-unsplash.jpg" class = "size-img"/>
+        </ion-card>
+      </ion-slide>
+  
+      <ion-slide>
+        <ion-card>
+          <img src="assets/wil-stewart-UErWoQEoMrc-unsplash.jpg" class = "size-img"/>
+        </ion-card>
+      </ion-slide>
+  
+    </ion-slides>
+
+  </div>
+  
+
+  <div>
+    <ion-grid>
+      <ion-row>
+        <ion-col class="ion-margin-start ion-margin-top">
+         <h3 class="ion-no-margin event-header">
+           All Events
+         </h3>      
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+
+  <div class="ion-margin-bottom" >
+    <ion-grid >
+      <ion-row > 
+        <ion-col sizeLg="4" sizeMd="4" sizeSm="6" sizeXs="12" *ngFor="let e of (events_list|async); let i = index ">
+
+          <ion-card button (click)="presentModal(e.id)" style="border-radius: 15px;" class="card-width" >
+
+            <ion-card-header >
+
+              <ion-card-subtitle> <ion-icon name="layers-outline"></ion-icon>
+                {{e.category}}
+              </ion-card-subtitle>
+
+              <ion-card-title>{{e.name}}: {{e.title}} </ion-card-title>
+              
+              <ion-row class="description">       
+                    {{e.description}}
+              </ion-row>       
+            </ion-card-header>
+        
+            <ion-button class="ion-no-margin" expand="full">View Details</ion-button>
+        
+          </ion-card>
+        </ion-col>
+
+        
+
+        
+
+      </ion-row>
+    </ion-grid>
+       
+
+
+
+
+
+  </div>
+
+
+ 
+
+  
+
+</ion-content>

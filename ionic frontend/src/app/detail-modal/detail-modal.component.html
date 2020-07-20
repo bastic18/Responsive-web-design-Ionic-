@@ -1,0 +1,68 @@
+
+<ion-buttons>
+    <ion-button class="close-btn" (click)="dismissModal()">Close</ion-button>
+</ion-buttons>
+ 
+
+
+<ion-content >
+
+
+
+<!-- 
+  <div class="menu-header-bg"></div> -->
+
+  <ion-grid class="details" >
+ 
+
+    <ion-row >
+      
+      <ion-col >
+          <ion-card-subtitle> <ion-icon name="layers"></ion-icon>
+           {{c.category}} 
+          </ion-card-subtitle>
+         
+          <p class="event-header"> {{c.name}}: {{c.title}} </p>
+          
+          <p class="small-details">
+            {{c.venue}}  <br> 
+            {{c.start_dt}}  <br> 
+            {{c.end_dt}} <br> 
+            {{c.cost}} 
+          </p>
+
+      </ion-col>
+      
+      <ion-col>
+        
+        <div class="img-header">
+          <img src="assets/undraw_having_fun_iais.svg" class = "detailed-img"/> 
+        </div>      
+
+      </ion-col>
+
+    </ion-row>
+
+    <ion-row>
+      <p class="description">
+        {{c.description}} 
+      </p>
+    </ion-row>
+
+    <ion-row class="action-button">
+          
+      <ion-button (click)="moveNext()"> 
+        <ion-icon slot="start" name="create"></ion-icon> Edit
+      </ion-button>
+
+      <ion-button (click)="delete_event()"> 
+        <ion-icon slot="start" name="trash"  ></ion-icon> Delete
+      </ion-button>
+    </ion-row>  
+
+ 
+
+  </ion-grid>
+
+ 
+</ion-content>

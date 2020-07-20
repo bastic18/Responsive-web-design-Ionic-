@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% include "flash.html"%}
+    {% from "_formhelpers.html" import render_field %}
+
+    <h3 class = "mb-3">{{title}}</h3>
+    <form class = "card w-50 pl-5 py-4" method ="post" action = '/register'>
+        {{form.hidden_tag()}}
+        <dl class="row"> <!--description helper tab-->
+            <div class="col-6">
+                {{render_field(form.firstname)}}
+                {{render_field(form.username)}}
+                {{render_field(form.password)}}
+            </div>
+
+            <div class="col-6">
+                {{render_field(form.lastname)}}
+                {{render_field(form.email)}}
+                {{render_field(form.confirm)}}
+            </div>
+        </dl>
+        <p><input class="btn btn-info" type="submit", value="Register"></p>
+
+    </form>
+
+{% endblock %}

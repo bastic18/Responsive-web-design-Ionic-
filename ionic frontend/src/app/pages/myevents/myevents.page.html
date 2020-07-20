@@ -1,0 +1,93 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>  
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div>
+    <div class="head-banner"></div>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col class="ion-margin-start ion-margin-top">
+         <h3 class="ion-no-margin big-message">
+             {{email}}
+         </h3>   
+        
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="action-button">
+          
+          <ion-button> 
+            <ion-icon slot="start" name="calendar"></ion-icon> {{current_date}}
+          </ion-button>
+      
+        
+      </ion-row>
+    </ion-grid>
+      
+   
+  
+  </div>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col class="ion-margin-start ion-margin-top">
+       <h3 class="ion-no-margin event-header">
+         Your Events
+       </h3>      
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div class="ion-margin-bottom">
+    <ion-grid>
+      <ion-row>
+        <ion-col sizeLg="4" sizeMd="4" sizeSm="6" sizeXs="12" *ngFor="let e of (events_list |async  ); let i = index ">
+
+          <ion-card button (click)="presentModal(e.id)" style="border-radius: 15px;" class="card-width">
+
+            <ion-card-header>
+
+              <ion-card-subtitle> <ion-icon name="layers-outline"></ion-icon>
+                {{e.category}} 
+              </ion-card-subtitle>
+
+               <!-- FOR EVENT STATUS -->
+               <ion-card-subtitle *ngIf="e.status == 0" class="event-status"> 
+                Private
+              </ion-card-subtitle>
+
+              <ion-card-subtitle *ngIf="e.status == 1" class="event-status"> 
+                Public
+              </ion-card-subtitle>
+
+
+              <ion-card-title> {{e.name}} : {{e.title}} </ion-card-title>
+              
+              <ion-row class="description">       
+                {{e.description}}    
+              </ion-row>       
+            </ion-card-header>
+        
+            <ion-button class="ion-no-margin" expand="full">View Details</ion-button>
+        
+          </ion-card>
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+       
+
+
+
+
+
+  </div>
+
+</ion-content>

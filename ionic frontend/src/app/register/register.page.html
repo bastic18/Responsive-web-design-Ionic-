@@ -1,0 +1,46 @@
+<ion-content>
+  <form>
+   
+  <h1>Create an Account</h1>
+ 
+  <div class="instructions">
+    Sign up and start publishing your events
+  </div>
+  
+  
+  <div class="form">
+    <ion-item lines="none">
+      <ion-label position="stacked">FIRSTNAME</ion-label>
+      <ion-input  name="firstname" type="text"  [(ngModel)]="firstname" ></ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label position="stacked">LASTNAME</ion-label>
+      <ion-input  name="lastname" type="text" [(ngModel)]="lastname" ></ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label position="stacked">USERNAME</ion-label>
+      <ion-input  name="name" type="text"  [(ngModel)]="username" ></ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label position="stacked">EMAIL</ion-label>
+      <ion-input name="email" type="email" placeholder="your@email.com"  [(ngModel)]="email"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label position="stacked">PASSWORD</ion-label>
+      <ion-input name="password" type="password"  [(ngModel)]="password"></ion-input>
+    </ion-item>
+
+    <div class ="uploadbtn">
+      <ion-button  type="submit" class="ion-margin" (click)= "register_user()"> 
+        Register
+      </ion-button>
+    </div>
+  </div>
+    
+
+  </form>
+</ion-content>

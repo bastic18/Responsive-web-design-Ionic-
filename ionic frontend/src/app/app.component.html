@@ -1,0 +1,54 @@
+<ion-app>
+  <ion-split-pane content-id="main">
+
+    <ion-menu menuId="main-menu" content-id="main">
+      
+      <ion-content>
+        <div class="menu-header-bg"></div>
+        <div class="header-content">
+          <ion-label>
+            <h2>Menu</h2>
+            <p>Events Managment</p>
+          </ion-label>
+        </div>
+  
+        <div class="action-button">
+          
+            <ion-button routerLink="/createvent"> 
+              <ion-icon slot="start" name="add"></ion-icon> Add Event 
+            </ion-button>
+        
+        </div>
+  
+        <ion-list class="menu-items" lines="none">
+         
+            <ion-item class="active" routerLink="/">
+              <ion-icon name="home-outline" slot="start"></ion-icon>
+              <ion-label>Home</ion-label>
+            </ion-item>
+         
+            <ion-item routerLink="/myevents">
+              <ion-icon name="calendar-outline" slot="start"></ion-icon>
+              <ion-label>My Events</ion-label>
+            </ion-item>
+       
+            
+         
+         
+            <ion-item routerLink="/logout">
+              <ion-icon name="log-out-outline" slot="start"></ion-icon>
+              <ion-label>Logout</ion-label>
+            </ion-item>
+        
+         
+  
+        </ion-list>
+  
+      </ion-content>
+  
+    </ion-menu>
+  
+    <ion-router-outlet id="main"></ion-router-outlet>
+    
+  </ion-split-pane>
+</ion-app>

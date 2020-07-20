@@ -1,0 +1,33 @@
+<ion-content>
+  <h1>Login</h1>
+
+
+
+
+<div class="form">
+
+  <ion-item lines="none">
+    <ion-label position="stacked">EMAIL</ion-label>
+    <ion-input [(ngModel)]="username"></ion-input>
+  </ion-item>
+
+  <ion-item lines="none">
+    <ion-label position="stacked">PASSWORD</ion-label>
+    <ion-input [(ngModel)]="password"></ion-input>
+  </ion-item> 
+
+  <ion-grid class="ion-margin">
+    <ion-row>
+
+      <ion-col>
+        <ion-button (click)= "login_verify()" expand="block"  color="medium">Login</ion-button>
+      </ion-col>
+
+      <ion-col>
+        <ion-button [routerLink]="['/register']" expand="block" color="light">Register</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</div>
+</ion-content>

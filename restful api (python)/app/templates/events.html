@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% include "flash.html" %}
+
+<div class = "text-center">
+    <h3>{{title}}</h3>
+    
+    {% if events %}
+        <div class = "row mt-5">
+            {% for e in events %}
+              
+                <div class="col-4 card mb-1 px-5 py-5">
+                    <img class="card-img-top" src="{{ url_for('static', filename='uploads/' + e.flyer) }}" alt="Card image cap" width = "400" height = "400">
+                    <div class="card-body">
+                        <b>{{e.title}} </b> 
+                        <div class = "row mt-3"> 
+                            <div class = "col-5 text-left">
+                                Name: 
+                                <br>
+                                Category:  
+                                <br>
+                                Start Date: 
+                                <br>
+                                End Date: 
+                                <br>
+                                Cost: 
+                                <br>
+                                Venue:  
+                                <br>
+                                Description:  
+
+                            </div>
+                            <div class = "col-7 text-left">
+                                {{e.name}} 
+                                <br>
+                               {{e.category}} 
+                                <br>
+                                {{e.start_dt}} 
+                                <br>
+                                {{e.end_dt}} 
+                                <br>
+                                {{e.cost}} 
+                                <br>
+                                {{e.venue}}  
+                                <br>
+                               {{e.description}} 
+                            </div>
+
+                        </div>
+
+                       
+                    </div>
+                </div>
+            {% endfor %}         
+        </div>
+    {% else %}
+
+        <p class = "alert alert-info">Currently no events. </p>
+
+    {% endif %}
+</div>
+
+{% endblock %}
